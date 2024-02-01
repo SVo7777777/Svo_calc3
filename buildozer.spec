@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = SvoCalc
+title = Svo Calc
 
 # (str) Package name
 package.name = svocalc
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.svo7777777
+package.domain = org.svocalc
 
 # (str) Source code where the main.py live
 source.dir = .
