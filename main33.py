@@ -53,13 +53,13 @@ layout0.add_widget(layout1)
 but = {}
 entry = {}
 for i in range(50):
-    h_layout = BoxLayout(height=60, size_hint=(None, None))
+    h_layout = BoxLayout(height=80, size_hint=(None, None))
     for j in range(6):
         if j == 5:
-            but[i, j] = Button(text='del', halign="center", font_size=28, size_hint=(None, None), height=80)
+            but[i, j] = Button(text='del', halign="center", font_size=38, size_hint=(None, None), height=100)
             h_layout.add_widget(but[i, j])
         else:
-            entry[i, j] = TextInput(halign="center", cursor_color=[0, 0, 1, 1], font_size=48, size_hint=(None, None), height=80, width=80, multiline=False)
+            entry[i, j] = TextInput(halign="center", cursor_color=[0, 0, 1, 1], font_size=58, size_hint=(None, None), height=100, width=100, multiline=False)
             h_layout.add_widget(entry[i, j])
             if j == 1:
                 entry[i, j].text = 'x'
@@ -69,11 +69,11 @@ for i in range(50):
                 entry[i, j].markup=True
             if j == 0:
                 entry[i, j].halign = 'right'
-                entry[i, j].width = 120
+                entry[i, j].width = 170
                
             if j == 2:
                 entry[i, j].halign = 'left'
-                entry[i, j].width = 120
+                entry[i, j].width = 140
             if j == 4:
                 entry[i, j].width = 220
                 entry[i, j].foreground_color = [1, 0, 1, 1]
@@ -552,11 +552,15 @@ def people():
                     n = 0
                     day = sp[0][:10]
                     for i  in range(len(sp)):
+                         print(i)
                          if sp[i][:10] == day:
                              n = n + 1
                              if i == len(sp)-1:
+                                 print('privet')
+                                 print( sp[i][:10] + ': ' + str(n) + ' чел.')
                                  vivod(i, sp[i][:10] + ': ' + str(n) + ' чел.')
                          else:
+                             print( sp[i-1][:10] + ': ' + str(n) + ' чел.')
                              vivod(i, sp[i-1][:10] + ': ' + str(n) + ' чел.')
                              day = sp[i][:10]
                              n = 1
